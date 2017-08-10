@@ -19,6 +19,9 @@ var Body = require('../body/Body');
 var Bounds = require('../geometry/Bounds');
 var Vector = require('../geometry/Vector');
 var decomp = require('poly-decomp');
+if (!decomp) {
+    decomp = window ? window.decomp : global ? global.decomp: null;
+}
 
 (function() {
 

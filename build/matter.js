@@ -1,5 +1,5 @@
 /**
-* matter-js 0.13.0 by @liabru 2017-07-06
+* matter-js 0.13.0 by @liabru 2017-08-10
 * http://brm.io/matter-js/
 * License MIT
 */

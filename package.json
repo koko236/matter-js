@@ -54,7 +54,9 @@
   "scripts": {
     "test": "gulp build:dev && gulp lint"
   },
-  "dependencies": {},
+  "dependencies": {
+    "poly-decomp": "^0.2.1"
+  },
   "files": [
     "src",
     "build",

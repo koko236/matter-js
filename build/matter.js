@@ -6682,10 +6682,14 @@ if (!decomp) {
         flagInternal = typeof flagInternal !== 'undefined' ? flagInternal : false;
         removeCollinear = typeof removeCollinear !== 'undefined' ? removeCollinear : 0.01;
         minimumArea = typeof minimumArea !== 'undefined' ? minimumArea : 10;
-
+        decomp = decomp || (window && window.decomp) || (global && global.decomp);
         if (!decomp) {
             Common.warn('Bodies.fromVertices: poly-decomp.js required. Could not decompose vertices. Fallback to convex hull.');
-            Common.warn('decomp W:', window, 'G:', global);
+            if (window) {
+                Common.warn('decomp W:', window.decomp, decomp);
+            } else if (global) {
+                Common.warn('decomp G:', global.decomp, decomp);
+            }
             
         }
 

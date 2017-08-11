@@ -20,7 +20,11 @@ var Bounds = require('../geometry/Bounds');
 var Vector = require('../geometry/Vector');
 var decomp = require('poly-decomp');
 if (!decomp) {
-    decomp = window ? window.decomp : global ? global.decomp: null;
+    decomp = window ? 
+        window.decomp : 
+        global ? 
+            global.decomp : 
+            null;
 }
 
 (function() {
@@ -219,6 +223,8 @@ if (!decomp) {
 
         if (!decomp) {
             Common.warn('Bodies.fromVertices: poly-decomp.js required. Could not decompose vertices. Fallback to convex hull.');
+            Common.warn('decomp W:', window, 'G:', global);
+            
         }
 
         // ensure vertexSets is an array of arrays

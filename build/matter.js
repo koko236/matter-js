@@ -1,5 +1,5 @@
 /**
-* matter-js 0.13.0 by @liabru 2017-08-10
+* matter-js 0.13.0 by @liabru 2017-08-11
 * http://brm.io/matter-js/
 * License MIT
 */
@@ -6482,7 +6482,11 @@ var Bounds = _dereq_('../geometry/Bounds');
 var Vector = _dereq_('../geometry/Vector');
 var decomp = (typeof window !== "undefined" ? window['decomp'] : typeof global !== "undefined" ? global['decomp'] : null);
 if (!decomp) {
-    decomp = window ? window.decomp : global ? global.decomp: null;
+    decomp = window ? 
+        window.decomp : 
+        global ? 
+            global.decomp : 
+            null;
 }
 
 (function() {
@@ -6681,6 +6685,8 @@ if (!decomp) {
 
         if (!decomp) {
             Common.warn('Bodies.fromVertices: poly-decomp.js required. Could not decompose vertices. Fallback to convex hull.');
+            Common.warn('decomp W:', window, 'G:', global);
+            
         }
 
         // ensure vertexSets is an array of arrays

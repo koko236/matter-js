@@ -19,13 +19,6 @@ var Body = require('../body/Body');
 var Bounds = require('../geometry/Bounds');
 var Vector = require('../geometry/Vector');
 var decomp = require('poly-decomp');
-if (!decomp) {
-    decomp = window ? 
-        window.decomp : 
-        global ? 
-            global.decomp : 
-            null;
-}
 
 (function() {
 
@@ -228,7 +221,6 @@ if (!decomp) {
             } else if (global) {
                 Common.warn('decomp G:', global.decomp, decomp);
             }
-            
         }
 
         // ensure vertexSets is an array of arrays

@@ -4388,7 +4388,7 @@ module.exports = Common;
      * @return {boolean} True if the object is a HTMLElement, otherwise false
      */
     Common.isElement = function(obj) {
-        return obj instanceof HTMLElement;
+        return typeof HTMLElement !== 'undefined' && obj instanceof HTMLElement;
     };
 
     /**

@@ -213,7 +213,10 @@ var decomp = require('poly-decomp');
         flagInternal = typeof flagInternal !== 'undefined' ? flagInternal : false;
         removeCollinear = typeof removeCollinear !== 'undefined' ? removeCollinear : 0.01;
         minimumArea = typeof minimumArea !== 'undefined' ? minimumArea : 10;
-        decomp = decomp || (window && window.decomp) || (global && global.decomp);
+        decomp = decomp || 
+        (typeof window !== 'undefined' && window.decomp) || 
+        (typeof global !== 'undefined' && global.decomp);
+        
         if (!decomp) {
             Common.warn('Bodies.fromVertices: poly-decomp.js required. Could not decompose vertices. Fallback to convex hull.');
             if (window) {
